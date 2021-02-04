@@ -36,9 +36,9 @@ services:
     restart: unless-stopped
 
 secrets:
-  papermergeimporter_auth_token1:
+  papermergeimporter_auth_token_user1:
     file: ./auth_token1.secret
-  papermergeimporter_auth_token2:
+  papermergeimporter_auth_token_user2:
     file: ./auth_token2.secret
 ...
 ```
@@ -47,7 +47,7 @@ In addition to the compose file, you need 2 more files for each user, these file
 
 `user1.env`
 ```bash
-FILE__AUTH_TOKEN=/run/secrets/papermergeimporter_auth_token
+FILE__AUTH_TOKEN=/run/secrets/papermergeimporter_auth_token_user1
 PAPERMERGE_HOST=papermerge:8000
 ```
 
