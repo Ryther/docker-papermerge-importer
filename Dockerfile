@@ -27,4 +27,6 @@ RUN echo "**** cleanup ****" && \
 
 COPY root/ /
 
+ENV WATCH_FOLDER=/data/papermerge/import
+
 ENTRYPOINT ["/init"]
