@@ -15,10 +15,7 @@ RUN mkdir -p \
             --virtual=build-dependencies \
             $BUILD_PACKAGES
 RUN git clone https://github.com/Ryther/papermerge-importer.git /app/papermerge-importer && \
-    rm -rf /app/papermerge-importer/.git && \
-    echo "**** ensure correct permissions ****" && \
-    chmod -R +x *.sh && \
-    chmod -R 0755 *.sh
+    rm -rf /app/papermerge-importer/.git
 RUN apk add --no-cache \
             --virtual=runtime-dependencies \
             $RUNTIME_PACKAGES
