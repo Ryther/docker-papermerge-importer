@@ -1,4 +1,5 @@
 FROM ghcr.io/linuxserver/baseimage-alpine:3.13
+LABEL org.opencontainers.image.source=https://github.com/ryther/docker-papermerge-importer
 
 ARG BUILD_PACKAGES="\
 	git"
