@@ -30,4 +30,5 @@ COPY root/ /
 
 ENV WATCH_FOLDER=/data/papermerge/import
 
+HEALTHCHECK --interval=10s --start-period=10s --retries=3 CMD /bin/sh /app/papermerge-importer/healthcheck.sh
 ENTRYPOINT ["/init"]
