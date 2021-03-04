@@ -12,6 +12,8 @@ services:
     image: ghcr.io/linuxserver/papermerge
     container_name: papermerge
     # Complete this container info
+    networks:
+      - papermerge-net
 
   papermerge-importer-user1:
     image: ghcr.io/ryther/papermerge-importer
@@ -23,6 +25,8 @@ services:
     volumes:
       - ${HOME}/documents/import/user1:/data/papermerge/import
     restart: unless-stopped
+    networks:
+      - papermerge-net
 
   papermerge-importer-user2:
     image: ghcr.io/ryther/papermerge-importer
@@ -34,6 +38,12 @@ services:
     volumes:
       - ${HOME}/documents/import/user2:/data/papermerge/import
     restart: unless-stopped
+    networks:
+      - papermerge-net
+
+networks:
+  papermerge-net:
+    name: papermerge-net
 
 secrets:
   papermergeimporter_auth_token_user1:
